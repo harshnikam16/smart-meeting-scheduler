@@ -9,13 +9,11 @@ class MeetingScheduler:
         self.schedule = {}  
     
     def is_working_day(self, date):
-        """Checks if a given date is a working day (not a weekend or holiday)."""
         if date.weekday() >= 5 or date in self.holidays:  
             return False
         return True
     
     def schedule_meeting(self, user, date, start_time, end_time):
-        """Schedules a meeting if the slot is available and it's a working day."""
         if not self.is_working_day(date):
             return "Cannot schedule on weekends or holidays."
         
@@ -39,7 +37,6 @@ class MeetingScheduler:
         return "Meeting scheduled successfully."
     
     def get_available_slots(self, user, date):
-        """Returns available time slots for a user on a given date."""
         if not self.is_working_day(date):
             return "No available slots on weekends or holidays."
         
@@ -58,7 +55,6 @@ class MeetingScheduler:
         return available_slots if available_slots else "No available slots."
     
     def view_meetings(self, user):
-        """Displays upcoming meetings for a user."""
         if user not in self.schedule:
             return "No meetings scheduled."
         
