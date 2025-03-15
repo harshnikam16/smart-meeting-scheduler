@@ -66,7 +66,7 @@ class MeetingScheduler:
         return result
 
 scheduler = MeetingScheduler(holidays=[datetime.date(2025, 3, 17)])
-user = "Alice"
+user = "Harsh"
 date = datetime.date(2025, 3, 18)
 
 print(scheduler.schedule_meeting(user, date, 10, 11))  
